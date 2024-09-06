@@ -2,8 +2,6 @@ package eqtypes
 
 import (
 	"strings"
-
-	"github.com/goccy/go-json"
 )
 
 type (

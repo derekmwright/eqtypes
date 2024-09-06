@@ -1,9 +1,5 @@
 package eqtypes
 
-import (
-	"github.com/goccy/go-json"
-)
-
 type Item struct {
 	ID                    int32           `json:"id" db:"items.id"`
 	MinStatus             int16           `json:"min_status,omitempty" db:"items.minstatus"`
@@ -34,7 +30,7 @@ type Item struct {
 	AugType               int32           `json:"augment_type,omitempty" db:"items.augtype"`
 	Avoidance             int32           `json:"avoidance,omitempty" db:"items.avoidance"`
 	Wis                   int32           `json:"-" db:"items.awis"`
-	BagSize               int32           `json:"bag_size,omitempty" db:"items.bagsize"`
+	BagSize               Size            `json:"bag_size,omitempty" db:"items.bagsize"`
 	BagSlots              int32           `json:"bag_slots,omitempty" db:"items.bagslots"`
 	BagType               int32           `json:"bag_type,omitempty" db:"items.bagtype"`
 	BagWeightReduction    int32           `json:"bag_weight_reduction,omitempty" db:"items.bagwr"`
@@ -114,7 +110,7 @@ type Item struct {
 	ReqLevel              int32           `json:"req_level,omitempty" db:"items.reqlevel"`
 	SellRate              float64         `json:"sell_rate,omitempty" db:"items.sellrate"`
 	Shielding             int32           `json:"shielding,omitempty" db:"items.shielding"`
-	Size                  int32           `json:"size,omitempty" db:"items.size"`
+	Size                  Size            `json:"size,omitempty" db:"items.size"`
 	SkillModType          *int32          `json:"skill_mod_type,omitempty" db:"items.skillmodtype"`
 	SkillModValue         int32           `json:"skill_mod_value,omitempty" db:"items.skillmodvalue"`
 	Slots                 SlotsBitmask    `json:"slots,omitempty" db:"items.slots"`

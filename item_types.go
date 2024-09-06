@@ -1,7 +1,5 @@
 package eqtypes
 
-import "github.com/goccy/go-json"
-
 type ItemType int32
 
 const (

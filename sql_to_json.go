@@ -3,8 +3,6 @@ package eqtypes
 import (
 	"database/sql"
 	"time"
-
-	"github.com/goccy/go-json"
 )
 
 type JsonNullTime struct {

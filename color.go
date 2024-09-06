@@ -2,8 +2,6 @@ package eqtypes
 
 import (
 	"encoding/binary"
-
-	"github.com/goccy/go-json"
 )
 
 type Colors uint32
