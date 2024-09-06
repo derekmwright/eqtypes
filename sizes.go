@@ -1,5 +1,7 @@
 package eqtypes
 
+import "encoding/json"
+
 type Size int32
 
 var sizeMap = map[Size]string{

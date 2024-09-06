@@ -2,6 +2,7 @@ package eqtypes
 
 import (
 	"encoding/binary"
+	"encoding/json"
 )
 
 type Colors uint32

@@ -1,6 +1,7 @@
 package eqtypes
 
 import (
+	"encoding/json"
 	"strings"
 )
 

@@ -2,6 +2,7 @@ package eqtypes
 
 import (
 	"database/sql"
+	"encoding/json"
 	"time"
 )
 
@@ -9,6 +10,7 @@ type JsonNullTime struct {
 	sql.NullTime
 }
 
+//goland:noinspection GoMixedReceiverTypes
 func (v JsonNullTime) MarshalJSON() ([]byte, error) {
 	if v.Valid {
 		return json.Marshal(v.Time)
@@ -17,6 +19,7 @@ func (v JsonNullTime) MarshalJSON() ([]byte, error) {
 
 }
 
+//goland:noinspection GoMixedReceiverTypes
 func (v *JsonNullTime) UnmarshalJSON(data []byte) error {
 	// Unmarshalling into a pointer will let us detect null
 	var x *time.Time
@@ -39,6 +42,7 @@ type JsonNullString struct {
 	sql.NullString
 }
 
+//goland:noinspection GoMixedReceiverTypes
 func (v JsonNullString) MarshalJSON() ([]byte, error) {
 	if v.Valid {
 		return json.Marshal(v.String)
@@ -46,6 +50,7 @@ func (v JsonNullString) MarshalJSON() ([]byte, error) {
 	return json.Marshal("")
 }
 
+//goland:noinspection GoMixedReceiverTypes
 func (v *JsonNullString) UnmarshalJSON(data []byte) error {
 	var x *string
 
@@ -67,10 +72,12 @@ type UnixTimestamp struct {
 	time.Time
 }
 
+//goland:noinspection GoMixedReceiverTypes
 func (v UnixTimestamp) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.Unix())
 }
 
+//goland:noinspection GoMixedReceiverTypes
 func (v *UnixTimestamp) UnmarshalJSON(data []byte) error {
 	var t time.Time
 	if err := json.Unmarshal(data, &t); err != nil {

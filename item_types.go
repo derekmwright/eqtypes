@@ -1,5 +1,7 @@
 package eqtypes
 
+import "encoding/json"
+
 type ItemType int32
 
 const (
