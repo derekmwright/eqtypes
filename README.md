@@ -27,8 +27,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/derekmwright/eqtypes"
 	"github.com/jmoiron/sqlx"
+
+	_ "github.com/go-sql-driver/mysql"
+
+	"github.com/derekmwright/eqtypes"
 )
 
 const driverName = "mysql"
@@ -50,7 +53,16 @@ func main() {
 			fmt.Println("item not found")
 		}
 	}
+
+	fmt.Printf("%+v\n", item.Races.NamesList())
+	// Returns [Human Barbarian Erudite Wood Elf High Elf Dark Elf Half Elf Dwarf Troll Ogre Halfling Gnome Iksar Vah Shir Froglok Drakkin]
 	
-	fmt.Printf("%+v\n", item)
+	fmt.Printf("%+v\n", item.Races.ShortNamesList())
+	// Returns [HUM BAR ERU ELF HIE DEF HEF DWF TRL OGR HFL GNM IKS VAH FRG DRK]
+	
+	// Stringer implementation will return the commonly used display format for EQ items
+	fmt.Println(item.Races)
+	// Returns ALL
 }
+
 ```
