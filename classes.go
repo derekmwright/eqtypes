@@ -6,6 +6,12 @@ import (
 	"github.com/goccy/go-json"
 )
 
+type Class uint
+
+func (c Class) String() string {
+	return classToString[c]
+}
+
 // ClassesBitmask is an integer that represents a set of EQ classes.
 type ClassesBitmask int32
 
@@ -68,10 +74,6 @@ var classToShortString = map[Class]string{
 	ClassBerserker:    "BER",
 }
 
-func NewClassesBitmask(bitmask int32) Class {
-	return Class(bitmask)
-}
-
 // list is an internally used function to return a list of class names.
 func (c ClassesBitmask) list(typ string) []string {
 	var (
@@ -117,10 +119,4 @@ func (c ClassesBitmask) ShortNamesList() []string {
 // MarshalJSON is a custom JSON marshaler that returns the concatenated short form of class names.
 func (c ClassesBitmask) MarshalJSON() ([]byte, error) {
 	return json.Marshal(c.ShortNamesList())
-}
-
-type Class uint
-
-func (c Class) String() string {
-	return classToString[c]
 }

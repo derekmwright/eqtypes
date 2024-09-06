@@ -117,7 +117,7 @@ type Item struct {
 	Size                  int32           `json:"size,omitempty" db:"items.size"`
 	SkillModType          *int32          `json:"skill_mod_type,omitempty" db:"items.skillmodtype"`
 	SkillModValue         int32           `json:"skill_mod_value,omitempty" db:"items.skillmodvalue"`
-	Slots                 int32           `json:"slots,omitempty" db:"items.slots"`
+	Slots                 SlotsBitmask    `json:"slots,omitempty" db:"items.slots"`
 	ClickEffect           *int32          `json:"click_effect,omitempty" db:"items.clickeffect"`
 	SpellShield           int32           `json:"spellshield,omitempty" db:"items.spellshield"`
 	Strikethrough         int32           `json:"strikethrough,omitempty" db:"items.strikethrough"`
